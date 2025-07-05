@@ -24,11 +24,11 @@ jobs:
         run: npm run build -- --configuration production --base-href jz-salon  # Replace with your repo name
 
       - name: Deploy to GitHub Pages
-        uses: bitovi/github-actions-angular-to-github-pages@v1.0.2 # or the latest version
+        uses: bitovi/github-actions-angular-to-github-pages@v1.0.0 # or the latest version
         with:
           # The folder the action should deploy
           deploy_path: dist/jz-salon # Replace with your dist folder
           # The branch the action should deploy to
-          deploy_branch: gh-pages # or your configured deployment branch
+          deploy_branch: master # or your configured deployment branch
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
