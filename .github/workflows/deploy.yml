@@ -21,7 +21,7 @@ jobs:
         run: npm install --
 
       - name: Build Angular
-        run: npm run build -- --configuration production --base-href jz-salon  # Replace with your repo name
+        run: npm run build -- --configuration production --base-href /jz-salon/  # Replace with your repo name
 
       - name: Deploy to gh pages
         run: |
