@@ -3,7 +3,6 @@
 
 @import "tailwindcss";
 @plugin "tailwindcss-primeui";
-
 @custom-variant dark (&:where(.dark-mode, .dark-mode *));
 
 *:not(i):not(span):not(mat-icon) {
