@@ -18,17 +18,23 @@ jobs:
           node-version: '24'  # Or your desired Node.js version
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --
 
       - name: Build Angular
         run: npm run build -- --configuration production --base-href jz-salon  # Replace with your repo name
 
-      - name: Deploy to GitHub Pages
-        uses: bitovi/github-actions-angular-to-github-pages@v1.0.0 # or the latest version
-        with:
-          # The folder the action should deploy
-          deploy_path: dist/jz-salon # Replace with your dist folder
-          # The branch the action should deploy to
-          deploy_branch: master # or your configured deployment branch
+      - name: Deploy to gh pages
+        run: |
+          npx angular-cli-ghpages --dir=dist/your-angular-app
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          CI: true
+          GH_TOKEN: ${{ secrets.TOKEN }}
+      # - name: Deploy to GitHub Pages
+      #   uses: bitovi/github-actions-angular-to-github-pages@v1.0.0 # or the latest version
+      #   with:
+      #     # The folder the action should deploy
+      #     deploy_path: dist/jz-salon # Replace with your dist folder
+      #     # The branch the action should deploy to
+      #     deploy_branch: master # or your configured deployment branch
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
