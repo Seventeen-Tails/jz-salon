@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+@import "tailwindcss";
+@plugin "tailwindcss-primeui";
+
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+
+*:not(i):not(span):not(mat-icon) {
+  font-family : Roboto !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+background: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+background-color: rgba(185, 185, 185, 0.7);
+width: 4px;
+border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: rgba(185, 185, 185, 0.7);
+}
+
