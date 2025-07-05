@@ -25,6 +25,11 @@ jobs:
       - name: Show build output
         run: ls -la dist && ls -la dist/jz-salon/browser
 
+      - name: Set Git identity
+        run: |
+          git config --global user.email "deploy-bot@github.com"
+          git config --global user.name "GitHub Actions"
+
       - name: Deploy to gh pages
         run: |
           npx angular-cli-ghpages --dir=dist/jz-salon/browser --no-silent
