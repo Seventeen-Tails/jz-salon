@@ -23,7 +23,7 @@ jobs:
       - name: Build Angular
         run: npm run build -- --configuration production --base-href /jz-salon/  # Replace with your repo name
       - name: Show build output
-        run: ls -la dist && ls -la dist/jz-salon
+        run: ls -la dist && ls -la dist/jz-salon/browser
 
       - name: Deploy to gh pages
         run: |
