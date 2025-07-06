@@ -1,0 +1,48 @@
+.menu {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  @media (max-width: 758px) {
+    margin-left: 0;
+  }
+}
+
+.header {
+  padding: 5px;
+  display: flex;
+}
+.menu-wrapper {
+  width: 100%;
+}
+
+.header-desktop {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-button-mobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.title-mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
