@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Component, inject, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { MenuItem } from 'primeng/api';
@@ -19,6 +19,7 @@ export class Menu implements OnInit {
   items: MenuItem[] | undefined;
   viewport = inject(Viewport);
 
+  constructor(private router: Router) {}
   ngOnInit() {
     this.items = [
       { separator: this.viewport.isDesktop() },
@@ -27,24 +28,36 @@ export class Menu implements OnInit {
         items: [
           {
             label: 'Novo',
-            icon: 'pi pi-plus'
+            icon: 'pi pi-plus',
+            command: () => {
+              this.router.navigate(['/cliente/form'])
+            }
           },
           {
             label: 'Buscar',
-            icon: 'pi pi-search'
+            icon: 'pi pi-search',
+            command: () => {
+              this.router.navigate(['/cliente/list'])
+            }
           }
         ]
       },
       {
-        label: 'Servicos',
+        label: 'Serviços',
         items: [
           {
             label: 'Novo',
-            icon: 'pi pi-plus'
+            icon: 'pi pi-plus',
+            command: () => {
+              this.router.navigate(['/servico/form'])
+            }
           },
           {
             label: 'Buscar',
-            icon: 'pi pi-search'
+            icon: 'pi pi-search',
+            command: () => {
+              this.router.navigate(['/servico/list'])
+            }
           }
         ]
       },

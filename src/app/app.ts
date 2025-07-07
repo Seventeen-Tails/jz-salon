@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Menu } from './components/menu/menu';
-import { Teste } from './components/teste/teste';
 
 @Component({
   selector: 'app-root',
-  imports: [Menu,Teste],
+  imports: [Menu],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
